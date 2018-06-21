@@ -8,8 +8,10 @@ import java.util.List;
 
 import javax.inject.Inject;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import fr.epita.quiz.datamodel.Question;
 import fr.epita.quiz.datamodel.QuestionType;
@@ -21,6 +23,7 @@ import fr.epita.quiz.web.constants.Constants;
  * @author ADEBOWALE
  *
  */
+@WebServlet(urlPatterns = "/qcreate")
 public class QuestionServlet extends SpringServlet {
 
 	private static final long serialVersionUID = -3131943414389127397L;
@@ -95,7 +98,11 @@ public class QuestionServlet extends SpringServlet {
 		question.setQuestion(req.getParameter("questionString"));
 
 		question.setType(type(req));
-		questionDAO.search(question);
+		
+		
+		HttpSession session = req.getSession();
+		session.setAttribute("data", questionDAO.search(question));
+				
 	}
 
 	private void createData(HttpServletRequest req, HttpServletResponse resp) {
