@@ -1,5 +1,13 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8"?>
 <faceted-project>
   <installed facet="java" version="1.8"/>
   <installed facet="jst.utility" version="1.0"/>
 </faceted-project>
+=======
+<?xml version="1.0" encoding="UTF-8"?>
+<faceted-project>
+  <installed facet="java" version="1.8"/>
+  <installed facet="jst.utility" version="1.0"/>
+</faceted-project>
+>>>>>>> ad1c8b681f0aeab93b4a8b3720c1ea3015d9eb88
